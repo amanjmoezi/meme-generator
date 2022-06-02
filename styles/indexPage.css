@@ -9,3 +9,40 @@ body>.container
     gap: 45px;
     
 }
+body>.container>.items
+{
+    width: 300px;
+    height: 400px;
+    background-color: #ffffff;
+    margin-top: 30px;
+    border-radius: 30px;
+    overflow: hidden;
+    position: relative;
+    
+}
+body>.container>.items img
+{
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    filter: brightness(0.7);
+    transition: .4s;
+    user-select: none;
+}
+body>.container>.items img:hover
+{
+    filter: none;
+    transform: scale(1.2);
+}
+body>.container>.items .addBtn
+{
+    width: 60px;
+    height: 60px;
+    background-color: #4e4cda;
+    position: absolute;
+    z-index: 100;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%);
+    border-radius: 50%;
+}
