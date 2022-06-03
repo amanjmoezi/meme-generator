@@ -85,3 +85,15 @@ body
     border-radius: 0 7px 7px 0;
     border: none;
 }
+.container .inputGp .addInp{
+    width: 350px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 7px;
+    background-color: #F3F3F3;
+    box-shadow: 0 0 10px #ccc;
+    margin-top: 15px;
+    cursor: pointer;
+}
