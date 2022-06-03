@@ -54,3 +54,8 @@ body
     justify-content: center;
     align-items: center;
 }
+.container .inputGp span
+{
+    display: flex;
+    margin-top: 16px;
+}
