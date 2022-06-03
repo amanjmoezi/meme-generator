@@ -27,6 +27,10 @@ body {
     resize: both;
     overflow: auto;
     top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
 }
 
 .container .left img {
@@ -52,6 +56,7 @@ body {
     width: 600px;
     justify-content: center;
     align-items: center;
+    overflow: auto;
 }
 
 .container .inputGp span {
@@ -108,6 +113,7 @@ body {
     height: 55px;
     display: flex;
     justify-content: space-between;
+    margin-top: 30px;
 }
 
 .container .btnGp button {

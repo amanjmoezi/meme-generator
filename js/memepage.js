@@ -13,3 +13,4 @@ if (isNaN(memeId)) {
     containerElement.innerHTML = `<h1>opss, not found a meme plz go to <a href="../"> home page</a>  </h1>`
 }
 imgShowMeme.src = `meme/${memeId}.jpg`
+    // end read params for show meme image
