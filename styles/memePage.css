@@ -45,3 +45,12 @@ body
     font-size: 1.5rem;
     color: #26262d;
 }
+.container .inputGp
+{
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+    width: 600px;
+    justify-content: center;
+    align-items: center;
+}
