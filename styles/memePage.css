@@ -18,3 +18,14 @@ body
     border-right: 2px solid #ccc;
     position: relative;
 }
+.container .left .textShow
+{
+    width: 300px;
+    height: 300px;
+    border: 3px dotted #aaa;
+    position: absolute;
+    background-color: rgba(204, 204, 204, 0.489);
+    resize: both;
+    overflow: auto;
+    top: 0;
+}
