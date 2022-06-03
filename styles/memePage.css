@@ -97,3 +97,6 @@ body
     margin-top: 15px;
     cursor: pointer;
 }
+.container .inputGp .addInp svg{
+    width: 40px;
+}
