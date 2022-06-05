@@ -39,6 +39,8 @@ function addTextBox() {
     }
     updateTextBox()
     editTextBox()
+    ChangeColorTextBox()
+
 }
 // make a drag and drop for text boxs
 function updateTextBox() {
@@ -65,16 +67,27 @@ function editTextBox() {
     const TextBoxsInput = document.querySelectorAll(`input[type="text"]`);
     let textValue = null;
     TextBoxsInput.forEach((element) => {
-        console.log(textValue);
         element.addEventListener("keypress", (e) => {
             textValue = e.target.value;
             textValueId = `Ts${e.target.parentElement.id.replace('Sp', '')}`;
             document.querySelector(`#${textValueId}`).innerHTML = textValue;
-            console.log(textValueId);
-            console.log(textValue);
         });
     })
 
 
 }
-editTextBox()
+// make Change textboxs
+
+function ChangeColorTextBox() {
+    const TextBoxsInput = document.querySelectorAll(`input[type="color"]`);
+    TextBoxsInput.forEach((element) => {
+        element.addEventListener("input", (e) => {
+            textValue = e.target.value;
+            textValueId = `Ts${e.target.parentElement.id.replace('Sp', '')}`;
+            document.querySelector(`#${textValueId}`).style.color = textValue;
+        });
+    })
+
+
+}
+ChangeColorTextBox()
