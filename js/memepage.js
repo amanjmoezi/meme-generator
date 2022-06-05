@@ -24,7 +24,7 @@ function addTextBox() {
 
     } else {
         let element = [document.createElement("span"), document.createElement("input"), document.createElement("input"), document.createElement("div")]
-        element[0].id = `Sp${InpGpElement.children.length}`;
+        element[0].id = `Sp${InpGpElement.children.length-1}`;
         element[1].type = "text";
         element[1].placeholder = "TEXT";
         element[2].type = "color";
@@ -33,7 +33,7 @@ function addTextBox() {
         InpGpElement.insertBefore(element[0], InpGpElement.children[0])
         element[3].innerHTML = `#TEXT ${InpGpElement.children.length-2}`
         element[3].classList.add("textShow")
-        element[3].id = `Ts${InpGpElement.children.length}`
+        element[3].id = `Ts${InpGpElement.children.length-1}`
         leftElement.append(element[3]);
     }
     updateTextBox()
