@@ -76,7 +76,8 @@ function editTextBox() {
 
 
 }
-// make Change textboxs
+editTextBox()
+    // make Change textboxs
 
 function ChangeColorTextBox() {
     const TextBoxsInput = document.querySelectorAll(`input[type="color"]`);
