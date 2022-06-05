@@ -24,7 +24,7 @@ function addTextBox() {
 
     } else {
         let element = [document.createElement("span"), document.createElement("input"), document.createElement("input"), document.createElement("div")]
-        element[0].id = `Sp${InpGpElement.children.length-1}`;
+        element[0].id = `Sp${InpGpElement.children.length}`;
         element[1].type = "text";
         element[1].placeholder = "TEXT";
         element[2].type = "color";
@@ -32,11 +32,13 @@ function addTextBox() {
         element[0].append(element[2])
         InpGpElement.insertBefore(element[0], InpGpElement.children[0])
         element[3].innerHTML = `#TEXT ${InpGpElement.children.length-2}`
+        element[3].contentEditable = "true";
         element[3].classList.add("textShow")
         element[3].id = `Ts${InpGpElement.children.length-1}`
         leftElement.append(element[3]);
     }
     updateTextBox()
+    editTextBox()
 }
 // make a drag and drop for text boxs
 function updateTextBox() {
@@ -44,7 +46,6 @@ function updateTextBox() {
     textShowElement.forEach((element) => {
         element.addEventListener("mousedown", () => {
             element.addEventListener("mousemove", moveDiv)
-            console.log(element);
         })
         element.addEventListener("mouseup", () => {
             element.removeEventListener("mousemove", moveDiv)
@@ -58,3 +59,22 @@ function updateTextBox() {
     }
 }
 updateTextBox()
+    // make edit textboxs
+
+function editTextBox() {
+    const TextBoxsInput = document.querySelectorAll(`input[type="text"]`);
+    let textValue = null;
+    TextBoxsInput.forEach((element) => {
+        console.log(textValue);
+        element.addEventListener("keypress", (e) => {
+            textValue = e.target.value;
+            textValueId = `Ts${e.target.parentElement.id.replace('Sp', '')}`;
+            document.querySelector(`#${textValueId}`).innerHTML = textValue;
+            console.log(textValueId);
+            console.log(textValue);
+        });
+    })
+
+
+}
+editTextBox()
