@@ -20,6 +20,22 @@ imgShowMeme.src = `meme/${memeId}.jpg`
 addInpElement.addEventListener("click", addTextBox)
 
 function addTextBox() {
+    if (InpGpElement.children.length > 5) {
+
+    } else {
+        let element = [document.createElement("span"), document.createElement("input"), document.createElement("input"), document.createElement("div")]
+        element[0].id = `Sp${InpGpElement.children.length}`;
+        element[1].type = "text";
+        element[1].placeholder = "TEXT";
+        element[2].type = "color";
+        element[0].append(element[1])
+        element[0].append(element[2])
+        InpGpElement.insertBefore(element[0], InpGpElement.children[0])
+        element[3].innerHTML = `#TEXT ${InpGpElement.children.length-2}`
+        element[3].classList.add("textShow")
+        element[3].id = `Ts${InpGpElement.children.length}`
+        leftElement.append(element[3]);
+    }
 
 }
 // make a drag and drop for text boxs
