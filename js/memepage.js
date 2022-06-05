@@ -18,3 +18,8 @@ if (isNaN(memeId)) {
 imgShowMeme.src = `meme/${memeId}.jpg`
     // end read params for show meme image
 addInpElement.addEventListener("click", addTextBox)
+
+function addTextBox() {
+
+}
+// make a drag and drop for text boxs
