@@ -1,6 +1,9 @@
 const memeId = new URLSearchParams(window.location.search).get('meme')
 const imgShowMeme = document.querySelector("img")
 const containerElement = document.querySelector(".container")
+const addInpElement = document.querySelector(".addInp")
+const InpGpElement = document.querySelector(".inputGp")
+const leftElement = document.querySelector(".left")
 if (isNaN(memeId)) {
     containerElement.style.display = "flex";
     containerElement.style.justifyContent = "center";
@@ -14,3 +17,4 @@ if (isNaN(memeId)) {
 }
 imgShowMeme.src = `meme/${memeId}.jpg`
     // end read params for show meme image
+addInpElement.addEventListener("click", addTextBox)
