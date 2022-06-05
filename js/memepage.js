@@ -36,6 +36,25 @@ function addTextBox() {
         element[3].id = `Ts${InpGpElement.children.length}`
         leftElement.append(element[3]);
     }
-
+    updateTextBox()
 }
 // make a drag and drop for text boxs
+function updateTextBox() {
+    const textShowElement = document.querySelectorAll(".textShow")
+    textShowElement.forEach((element) => {
+        element.addEventListener("mousedown", () => {
+            element.addEventListener("mousemove", moveDiv)
+            console.log(element);
+        })
+        element.addEventListener("mouseup", () => {
+            element.removeEventListener("mousemove", moveDiv)
+        })
+    })
+
+    function moveDiv({ target, clientY, clientX }) {
+        target.style.top = `${clientY}px`
+        target.style.left = `${clientX}px`
+        target.style.transform = `translate(-50%,-50%)`
+    }
+}
+updateTextBox()
