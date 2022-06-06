@@ -108,3 +108,23 @@ function ResetMeme() {
     })
     addTextBox()
 }
+saveBtnElement.addEventListener("click", SaveMeme)
+
+function SaveMeme() {
+    const textShowElement = document.querySelectorAll(".textShow")
+    textShowElement.forEach((element) => {
+        element.style.background = "none";
+        element.style.border = "none";
+        element.style.wordWrap = "normal";
+    })
+    html2canvas(document.querySelector(".left")).then((canvas) => {
+        let a = document.createElement("a");
+        a.download = "meme.jpg";
+        a.href = canvas.toDataURL("image/jpg");
+        a.click();
+        textShowElement.forEach((element) => {
+            element.style.background = "";
+            element.style.border = "";
+        })
+    });
+}
