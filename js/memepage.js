@@ -91,7 +91,6 @@ function ChangeColorTextBox() {
         });
     })
 
-
 }
 ChangeColorTextBox()
     // make reset Btn
