@@ -4,6 +4,8 @@ const containerElement = document.querySelector(".container")
 const addInpElement = document.querySelector(".addInp")
 const InpGpElement = document.querySelector(".inputGp")
 const leftElement = document.querySelector(".left")
+const resetBtnElement = document.querySelector(".resetBtn")
+const saveBtnElement = document.querySelector(".saveBtn")
 if (isNaN(memeId)) {
     containerElement.style.display = "flex";
     containerElement.style.justifyContent = "center";
@@ -31,7 +33,7 @@ function addTextBox() {
         element[0].append(element[1])
         element[0].append(element[2])
         InpGpElement.insertBefore(element[0], InpGpElement.children[0])
-        element[3].innerHTML = `#TEXT ${InpGpElement.children.length-2}`
+        element[3].innerText = `#TEXT ${InpGpElement.children.length-2}`
         element[3].contentEditable = "true";
         element[3].classList.add("textShow")
         element[3].id = `Ts${InpGpElement.children.length-1}`
@@ -70,7 +72,7 @@ function editTextBox() {
         element.addEventListener("keypress", (e) => {
             textValue = e.target.value;
             textValueId = `Ts${e.target.parentElement.id.replace('Sp', '')}`;
-            document.querySelector(`#${textValueId}`).innerHTML = textValue;
+            document.querySelector(`#${textValueId}`).innerText = textValue;
         });
     })
 
@@ -92,3 +94,18 @@ function ChangeColorTextBox() {
 
 }
 ChangeColorTextBox()
+    // make reset Btn
+resetBtnElement.addEventListener("click", ResetMeme)
+
+function ResetMeme() {
+    let textShowElement = document.querySelectorAll(".textShow")
+    const TextBoxsInput = document.querySelectorAll(`span`);
+    console.log(TextBoxsInput);
+    textShowElement.forEach((element) => {
+        element.remove()
+    })
+    TextBoxsInput.forEach((element) => {
+        element.remove()
+    })
+    addTextBox()
+}
